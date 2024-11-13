@@ -1,31 +1,178 @@
+/* General Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background: #f8f9fa;
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #212529;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full height */
+    line-height: 1.6; /* Improve line height for readability */
+}
+
+/* Content Section */
+.container {
+    flex-grow: 1; /* Let the content section grow to fill remaining space */
     padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600; /* Stronger weight for emphasis */
+    color: #003300;
+    margin-bottom: 1.5rem; /* Increased spacing between headings */
 }
 
 h1 {
-    color: #333;
+    font-size: 1rem; /* Reduced font size for the main header */
+    text-align: center;
+    margin-top: 1rem; /* Reduced space above the main heading */
 }
 
-.table {
+/* Paragraph Styling */
+p {
+    margin-bottom: 1.5rem; /* Increased space between paragraphs */
+}
+
+/* Navigation Menu */
+#menu {
+    display: flex;
+    justify-content: flex-end; /* Align menu items to the right */
+    background-color: #003300;
+    padding: 10px 0; /* Reduced padding for a smaller menu */
+    margin: 0;
+    list-style: none;
+    border-radius: 5px; /* Rounded corners for a soft look */
+}
+
+    #menu li {
+        display: inline-block;
+        margin: 0 15px; /* Reduced space between menu items */
+    }
+
+    /* Menu Links */
+    #menu a {
+        color: #FDC800;
+        font-weight: bold;
+        font-size: 16px; /* Reduced font size for a more compact look */
+        padding: 8px 12px; /* Reduced padding around links */
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+        text-decoration: none;
+    }
+
+        /* Menu Item Hover Effect */
+        #menu a:hover {
+            color: #ffffff;
+            background-color: #0056b3; /* Subtle blue background on hover */
+            transform: scale(1.05); /* Slightly enlarge the link on hover */
+        }
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #003300;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Space above the button */
+}
+
+    button:hover {
+        background-color: #0056b3; /* Match the hover color of the links */
+    }
+
+/* Form Styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 2em;
+    background-color: #171717; /* Dark background */
+    border-radius: 25px;
+    transition: 0.4s ease-in-out;
+}
+
+    .form:hover {
+        transform: scale(1.05);
+        border: 1px solid #444;
+    }
+
+#heading {
+    text-align: center;
+    margin-bottom: 2em;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 1em;
+    border: none;
+    color: white;
+    background-color: #171717;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.input-icon {
+    height: 1.5em;
+    width: 1.5em;
+    fill: white;
+}
+
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    color: #d3d3d3;
+    font-size: 16px;
 }
 
-    .table th, .table td {
-        padding: 12px;
-        border: 1px solid #ddd;
-        text-align: left;
+/* Footer Styling */
+footer {
+    background-color: #003300;
+    color: #FDC800;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: auto; /* Push the footer to the bottom if content is less */
+}
+
+    footer a {
+        color: #FDC800;
+        text-decoration: none;
     }
 
-    .table th {
-        background-color: #007bff;
-        color: white;
-    }
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-    .table tr:hover {
-        background-color: #f1f1f1;
-    }
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}

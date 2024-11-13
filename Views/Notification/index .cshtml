@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ScheduleApp.Models.Notification>
+
+<h2>Notifications</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Message</th>
+            <th>User Type</th>
+            <th>Timestamp</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var notification in Model)
+    {
+        <tr>
+                <td>@notification.Message</td>
+                <td>@notification.UserType</td>
+                <td>@notification.Timestamp.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@(notification.IsRead ? "Read" : "Unread")</td>
+                <td>
+                    <a href="@Url.Action("Details", "Notification", new { id = notification.NotificationId })">View</a> |
+                    <a href="@Url.Action("MarkAsRead", "Notification", new { id = notification.NotificationId })">Mark as Read</a> |
+                    <a href="@Url.Action("Delete", "Notification", new { id = notification.NotificationId })">Delete</a>
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Notification")" class="btn btn-primary">Add New Notification</a>

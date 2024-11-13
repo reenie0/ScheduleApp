@@ -1,0 +1,25 @@
+﻿@model ScheduleApp.Models.Notification
+
+<h2>Notification Details</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Notification for @Model.UserType</h5>
+        <p><strong>Recipient Email:</strong> @Model.RecipientEmail</p>
+        <p><strong>Message:</strong> @Model.Message</p>
+        <p><strong>Timestamp:</strong> @Model.Timestamp.ToString("yyyy-MM-dd HH:mm")</p>
+        <p><strong>Status:</strong> @(Model.IsRead ? "Read" : "Unread")</p>
+
+        @if (Model.UserType == "Student" && Model.Student != null)
+    {
+        <p><strong>Student:</strong> @Model.Student.FirstName @Model.Student.LastName</p>
+    }
+    else if (Model.UserType == "Lecturer" && Model.Lecturer != null)
+    {
+        <p><strong>Lecturer:</strong> @Model.Lecturer.FirstName @Model.Lecturer.LastName</p>
+    }
+    </div>
+</div>
+
+<a href="@Url.Action("Index", "Notification")" class="btn btn-secondary">Back to Notifications</a>
+<a href="@Url.Action("MarkAsRead", "Notification", new { id = Model.NotificationId })" class="btn btn-success">Mark as Read</a>

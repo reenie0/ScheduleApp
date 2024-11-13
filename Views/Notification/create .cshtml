@@ -1,0 +1,40 @@
+﻿@model ScheduleApp.Models.Notification
+
+<h2>Create Notification</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="UserType"></label>
+        <select asp-for="UserType" class="form-control" required>
+            <option value="Student">Student</option>
+            <option value="Lecturer">Lecturer</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecipientEmail"></label>
+        <input asp-for="RecipientEmail" class="form-control" required />
+        <span asp-validation-for="RecipientEmail" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Message"></label>
+        <textarea asp-for="Message" class="form-control" required></textarea>
+        <span asp-validation-for="Message" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Timestamp"></label>
+        <input asp-for="Timestamp" class="form-control" type="datetime-local" required />
+        <span asp-validation-for="Timestamp" class="text-danger"></span>
+    </div>
+
+    <div class="form-check">
+        <input asp-for="IsRead" class="form-check-input" type="checkbox" />
+        <label asp-for="IsRead" class="form-check-label">Is Read</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Create Notification</button>
+    <a href="@Url.Action("Index", "Notification")" class="btn btn-secondary mt-3">Cancel</a>
+</form>
+

@@ -1,24 +1,61 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewData["Title"] - ScheduleApp</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Appointment Schedule</title>
+
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/custom-styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                <li><a href="@Url.Action("StudentSignup", "Account")">Student Signup</a></li>
-                <li><a href="@Url.Action("LecturerSignup", "Account")">Lecturer Signup</a></li>
-                <li><a href="@Url.Action("Login", "Account")">Login</a></li>
-            </ul>
+<body class="grad d-flex flex-column" style="min-height: 100vh;">
+    <!-- Header -->
+    <header class="header">
+        <nav id="menu" class="navbar navbar-expand-lg navbar-dark" style="background-color: #003300;">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("StudentSignup", "Account")" style="color: #FDC800;">Student Signup</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("LecturerSignup", "Account")" style="color: #FDC800;">Lecturer Signup</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Login", "Account")" style="color: #FDC800;">Login</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
+        <div class="header-content text-center">
+            <a href="/" style="color: #FDC800; text-decoration: none;">
+                <h1 class="welcome-message">Appointment Schedule</h1> <!-- Title -->
+            </a>
+            <a href="/" class="me-3">
+                <img src="~/images/unilus_logo.png" alt="Appointment Schedule Logo" class="logo" />
+            </a>
+        </div>
     </header>
-    <div class="container">
-        @RenderBody()
-    </div>
+
+    <!-- Main Content -->
+    <main class="d-flex align-items-center justify-content-center flex-grow-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+                    <div class="content-wrapper">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer mt-4 text-center" style="background-color: #003300; color: #FDC800; padding: 15px; position: relative; bottom: 0; width: 100%;">
+        &copy; @DateTime.Now.Year All Rights Reserved.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

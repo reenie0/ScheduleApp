@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ScheduleApp.Models.Department>
+
+<h2>Departments</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Head of Department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+    {
+        <tr>
+                <td>@department.DepartmentName</td>
+                <td>@department.DepartmentId</td>
+                <td>@department.HeadOfDepartment</td>
+                <td>
+                    <a href="@Url.Action("Details", "Department", new { id = department.DepartmentId })">View</a> |
+                    <a href="@Url.Action("Edit", "Department", new { id = department.DepartmentId })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Department", new { id = department.DepartmentId })">Delete</a>
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Department")" class="btn btn-primary">Add New Department</a>

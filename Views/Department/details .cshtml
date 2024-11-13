@@ -1,0 +1,22 @@
+﻿@model ScheduleApp.Models.Department
+
+<h2>Department Details</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.DepartmentName</h5>
+        <p><strong>Head of Department:</strong> @Model.HeadOfDepartment</p>
+
+        <h6>Lecturers:</h6>
+        <ul>
+            @foreach (var lecturer in Model.Lecturer)
+        {
+            <li>@lecturer.FirstName @lecturer.LastName</li>
+        }
+        </ul>
+    </div>
+</div>
+
+<a href="@Url.Action("Index", "Department")" class="btn btn-secondary">Back to Departments</a>
+<a href="@Url.Action("Edit", "Department", new { id = Model.DepartmentId })" class="btn btn-primary">Edit</a>
+<a href="@Url.Action("Delete", "Department", new { id = Model.DepartmentId })" class="btn btn-danger">Delete</a>

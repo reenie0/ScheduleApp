@@ -1,0 +1,71 @@
+﻿@model Tuple<IEnumerable<ScheduleApp.Models.Student>, IEnumerable<ScheduleApp.Models.Lecturer>>
+
+<h2>Student and Lecturer List</h2>
+
+<h3>Students</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Student Number</th>
+            <th>Program</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model.Item1)
+    {
+        <tr>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.Email</td>
+                <td>@student.StudentNumber</td>
+                <td>@student.Program</td>
+                <td>
+                    <a href="@Url.Action("Details", "Student", new { id = student.StudentId })">View</a> |
+                    <a href="@Url.Action("Edit", "Student", new { id = student.StudentId })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Student", new { id = student.StudentId })">Delete</a>
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Student")" class="btn btn-primary">Add New Student</a>
+
+<h3>Lecturers</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Lecturer Number</th>
+            <th>Department</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lecturer in Model.Item2)
+    {
+        <tr>
+                <td>@lecturer.FirstName</td>
+                <td>@lecturer.LastName</td>
+                <td>@lecturer.Email</td>
+                <td>@lecturer.LecturerNumber</td>
+                <td>@lecturer.Department</td>
+                <td>@lecturer.Title</td>
+                <td>
+                    <a href="@Url.Action("Details", "Lecturer", new { id = lecturer.LecturerId })">View</a> |
+                    <a href="@Url.Action("Edit", "Lecturer", new { id = lecturer.LecturerId })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Lecturer", new { id = lecturer.LecturerId })">Delete</a>
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Lecturer")" class="btn btn-primary">Add New Lecturer</a>

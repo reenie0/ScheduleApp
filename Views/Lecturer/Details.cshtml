@@ -1,0 +1,14 @@
+﻿@model ScheduleApp.Models.Lecturer
+
+<h2>Lecturer Details</h2>
+
+<div>
+    <p><strong>Lecturer ID:</strong> @Model.LecturerId</p>
+    <p><strong>First Name:</strong> @Model.FirstName</p>
+    <p><strong>Last Name:</strong> @Model.LastName</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Department:</strong> @Model.Department</p>
+    <p><strong>Title:</strong> @Model.Title</p>
+</div>
+
+<a href="@Url.Action("Index", "Lecturer")" class="btn btn-secondary">Back to List</a>

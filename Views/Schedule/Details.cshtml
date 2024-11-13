@@ -1,0 +1,15 @@
+﻿@model ScheduleApp.Models.Schedule
+
+<h2>Schedule Details</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <p>Lecturer: @Model.LecturerId</p>
+        <p>Start Time: @Model.StartTime.ToString("yyyy-MM-dd HH:mm")</p>
+        <p>End Time: @Model.EndTime.ToString("yyyy-MM-dd HH:mm")</p>
+        <p>Title: @Model.Title</p>
+    </div>
+</div>
+
+<a href="@Url.Action("Index", "Schedule")" class="btn btn-secondary">Back to Schedules</a>
