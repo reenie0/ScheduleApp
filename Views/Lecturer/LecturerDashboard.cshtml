@@ -1,0 +1,78 @@
+﻿@model ScheduleApp.ViewModels.LecturerDashboard
+
+@{
+    ViewBag.Title = "Lecturer Dashboard";
+}
+
+<h2>Lecturer Dashboard</h2>
+
+<div class="dashboard">
+    <h3>Welcome, @Model.Lecturer.FirstName @Model.Lecturer.LastName</h3>
+
+    <h4>Your Schedule</h4>
+    @if (Model.Schedules != null && Model.Schedules.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Time</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var schedule in Model.Schedules)
+                {
+                    <tr>
+                        <td>@schedule.Title</td>
+                        <td>@schedule.StartTime.ToString("f")</td>
+                        <td>@schedule.Location</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>You have no scheduled classes at this time.</p>
+    }
+
+    <h4>Pending Appointment Requests</h4>
+    @if (Model.AppointmentRequest != null && Model.AppointmentRequest.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Request Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var request in Model.AppointmentRequest)
+                {
+                    <tr>
+                        
+                        <td>@request.RequestDate.ToString("f")</td>
+                        <td>@request.Status</td>
+                        <td>
+                            <form asp-action="AcceptRequest" method="post" style="display:inline;">
+                                <input type="hidden" name="requestId" value="@request.AppointmentRequestId" />
+                                <button type="submit" class="btn btn-success">Accept</button>
+                            </form>
+                            <form asp-action="DeclineRequest" method="post" style="display:inline;">
+                                <input type="hidden" name="requestId" value="@request.AppointmentRequestId" />
+                                <button type="submit" class="btn btn-danger">Decline</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>You have no pending appointment requests.</p>
+    }
+</div>

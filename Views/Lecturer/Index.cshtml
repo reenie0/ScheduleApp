@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ScheduleApp.Models.Lecturer>
+
+<h2>Lecturer List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Lecturer ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lecturer in Model)
+    {
+        <tr>
+                <td>@lecturer.LecturerId</td>
+                <td>@lecturer.FirstName</td>
+                <td>@lecturer.LastName</td>
+                <td>@lecturer.Email</td>
+                <td>@lecturer.Department</td>
+                <td>
+                    <a href="@Url.Action("Details", "Lecturer", new { id = lecturer.LecturerId })">View</a> |
+                    <a href="@Url.Action("Edit", "Lecturer", new { id = lecturer.LecturerId })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Lecturer", new { id = lecturer.LecturerId })">Delete</a>
+                </td>
+            </tr>
+    }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Lecturer")" class="btn btn-primary">Add New Lecturer</a>
+

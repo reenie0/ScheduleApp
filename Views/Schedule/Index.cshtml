@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ScheduleApp.Models.Schedule>
+
+    <h2>Schedules</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Lecturer</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var schedule in Model)
+    {
+        <tr>
+                <td>@schedule.Title</td>
+                <td>@schedule.LecturerId</td>
+                <td>@schedule.StartTime.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@schedule.EndTime.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>
+                    <a href="@Url.Action("Details", "Schedule", new { id = schedule.ScheduleId })">View</a> |
+                    <a href="@Url.Action("Edit", "Schedule", new { id = schedule.ScheduleId })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Schedule", new { id = schedule.ScheduleId })">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+
+    <a href="@Url.Action("Create", "Schedule")" class="btn btn-primary">Add New Schedule</a>

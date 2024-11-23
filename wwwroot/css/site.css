@@ -1,31 +1,223 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
     margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    background-color: #006400;
+    color: yellow;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px
+}
+
+    .header h1 {
+        margin: 0;
+        font-size: 30px;
+    }
+
+    .header img {
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+    }
+.title {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+.nav {
+    background-color: #006400;
+    overflow: hidden;
+}
+
+    .nav a {
+        float: right;
+        display: block;
+        color: yellow;
+        text-align: center;
+        padding: 15px 17px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .content img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 100px;
+    }
+
+    .content h2 {
+        color: #006400;
+        font-size: 50px;
+    }
+
+.footer {
+    background-color: #006400;
+    color: yellow;
+    padding: 10px 0;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Consider using a Google Font for better aesthetics */
+    background-color: #f0f0f0; /* A lighter background for contrast */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+::placeholder {
+    color: #aaa; /* Light gray for placeholder text */
+    opacity: 1; /* Firefox lowers the opacity */
+}
+
+/* Center the container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     padding: 20px;
 }
 
-h1 {
-    color: #333;
-}
-
-.table {
+/* Styling for the login box */
+.login-box {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px; /* Adjusted padding for a more balanced look */
+    border-radius: 20px; /* Slightly less rounded for a modern look */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    max-width: 400px;
 }
 
-    .table th, .table td {
-        padding: 12px;
-        border: 1px solid #ddd;
-        text-align: left;
+    .login-box h2 {
+        color: #006400;
+        margin-bottom: 20px; /* Reduced margin for better spacing */
+        font-size: 24px; /* Increased font size for better visibility */
     }
 
-    .table th {
-        background-color: #007bff;
+    .login-box input[type="text"],
+    .login-box input[type="password"],
+    .login-box select {
+        display: block;
+        margin: 15px auto; /* Adjusted margin for better spacing */
+        padding: 15px; /* Reduced padding for a more compact look */
+        width: 100%;
+        max-width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px; /* Increased font size for better readability */
+        transition: border-color 0.3s; /* Smooth transition for border color */
+    }
+
+        .login-box input[type="text"]:focus,
+        .login-box input[type="password"]:focus,
+        .login-box select:focus {
+            border-color: #006400; /* Change border color on focus */
+            outline: none; /* Remove default outline */
+        }
+
+    .login-box input[type="submit"] {
+        background-color: #006400;
         color: white;
+        border: none;
+        padding: 15px; /* Adjusted padding for a more balanced look */
+        cursor: pointer;
+        width: 100%;
+        max-width: 300px;
+        border-radius: 4px;
+        font-size: 18px; /* Increased font size for better visibility */
+        transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background color and scale */
     }
 
-    .table tr:hover {
-        background-color: #f1f1f1;
+        .login-box input[type="submit"]:hover {
+            background-color: #004d00;
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
+
+/* Media query to handle smaller screens */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 20px; /* Adjust padding for smaller screens */
     }
+
+        .login-box h2 {
+            font-size: 20px; /* Adjust font size for smaller screens */
+        }
+
+        .login-box input[type="text"],
+        .login-box input[type="password"],
+        .login-box select,
+        .login-box input[type="submit"] {
+            max-width: 90%; /* Ensure inputs take up more space on smaller screens */
+        }
+}
+
+body {
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.signup-container {
+    max-width: 600px; /* Limit the width of the form */
+    margin: 50px auto; /* Center the form vertically and horizontally */
+    padding: 30px; /* Add padding around the form */
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h2 {
+    margin-bottom: 20px; /* Space below the heading */
+    color: #006400; /* Dark green color for the heading */
+}
+
+.btn-primary {
+    width: 100%; /* Full width button */
+}
+
+body {
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.signup-container {
+    max-width: 600px; /* Limit the width of the form */
+    margin: 50px auto; /* Center the form vertically and horizontally */
+    padding: 30px; /* Add padding around the form */
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h2 {
+    margin-bottom: 20px; /* Space below the heading */
+    color: #006400; /* Dark green color for the heading */
+}
+
+.btn-primary {
+    width: 100%; /* Full width button */
+}

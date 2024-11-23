@@ -1,0 +1,109 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<html>
+<head>
+    <title>
+        Home Page - Appointment Schedule
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f5;
+        }
+
+        .header {
+            background-color: #004d00;
+            color: #ffcc00;
+            padding: 20px 0;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .header .links {
+                margin-right: 20px;
+            }
+
+                .header .links a {
+                    color: #ffcc00;
+                    text-decoration: none;
+                    margin: 0 10px;
+                    font-size: 16px;
+                }
+
+            .header .title {
+                margin-left: 20px;
+                font-size: 24px;
+            }
+
+            .header .logo {
+                margin-right: 20px;
+            }
+
+        .content {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+            .content .welcome-box {
+                display: block;
+                background-color: transparent;
+                padding: 20px 40px;
+                border-radius: 10px;
+                box-shadow: none;
+            }
+
+                .content .welcome-box h2 {
+                    margin: 0;
+                    color: #004d00;
+                    font-size: 36px;
+                }
+
+        .footer {
+            background-color: #004d00;
+            color: #ffcc00;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">
+            APPOINTMENT SCHEDULE
+        </div>
+        <div class="logo">
+            <img alt="University of Lusaka logo" height="50" src="~/images/unilus_logo.png" width="50" />
+        </div>
+        <div class="links">
+            <a href="#">
+                Student Signup
+            </a>
+            <a href="#">
+                Lecturer Signup
+            </a>
+            <a href="#">
+                Login
+            </a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="welcome-box">
+            <h2>
+                WELCOME
+            </h2>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2023 All Rights Reserved
+    </div>
+</body>
+</html>

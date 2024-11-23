@@ -1,24 +1,31 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewData["Title"] - ScheduleApp</title>
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/site.css">
+    <title>@ViewData["Title"] - Appointment Schedule</title>
+  
+        
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                <li><a href="@Url.Action("StudentSignup", "Account")">Student Signup</a></li>
-                <li><a href="@Url.Action("LecturerSignup", "Account")">Lecturer Signup</a></li>
-                <li><a href="@Url.Action("Login", "Account")">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="container">
+    <div class="header">
+        <img alt="University of Lusaka Logo" height="40" src="~/images/unilus2.jpg" width="40" />
+        <h1>APPOINTMENT SCHEDULE</h1>
+        <div class="nav">
+            <a href="@Url.Action("Login", "Account")">Login</a>
+            <a href="@Url.Action("LecturerSignup", "Account")">Lecturer Signup</a>
+            <a href="@Url.Action("StudentSignup", "Account")">Student Signup</a>
+        </div>
+    </div>
+
+    <!-- This is where the content of the view will be injected -->
+    <div class="content">
         @RenderBody()
+    </div>
+
+    <div class="footer">
+        <p>© 2023 All Rights Reserved</p>
     </div>
 </body>
 </html>
